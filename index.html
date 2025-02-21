@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RHiD - Software de Gestão de Ponto Inteligente</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <h1>RHiD</h1>
+                <span>Gestão Inteligente de Ponto</span>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <section class="software-principal container">
+            <div class="software-content">
+                <div class="software-texto">
+                    <h2>Transforme a Gestão de Ponto da sua Empresa</h2>
+                    <p>Automatize o controle de ponto, economize tempo e reduza erros com nossa solução completa.</p>
+                    
+                    <div class="planos-container">
+                        <div class="toggle-plano">
+                            <span>Plano Mensal</span>
+                            <label class="switch">
+                                <input type="checkbox" id="plano-toggle">
+                                <span class="slider"></span>
+                            </label>
+                            <span>Plano Anual <strong>(10% OFF)</strong></span>
+                        </div>
+
+                        <div class="planos-swiper swiper">
+                            <div class="swiper-wrapper">
+                                <div class="swiper-slide plano-card plano-mensal">
+                                    <h3>Plano Essencial</h3>
+                                    <div class="preco-plano">
+                                        <span class="valor-mensal">R$ 88,00</span>
+                                        <span class="periodo">/mês</span>
+                                    </div>
+                                    <ul class="beneficios">
+                                        <li><strong>Licença para 1 CNPJ</strong></li>
+                                        <li>Até 20 funcionários</li>
+                                        <li>Suporte ilimitado</li>
+                                        <li>Dashboard completo</li>
+                                        <li>Integração de folha</li>
+                                    </ul>
+                                    <div class="acoes-plano">
+                                        <button class="cta-button-software">Testar Grátis</button>
+                                        <a href="#" class="link-comprar">Comprar Agora</a>
+                                    </div>
+                                </div>
+                                <div class="swiper-slide plano-card plano-anual" style="display:none;">
+                                    <div class="badge">Mais Popular</div>
+                                    <h3>Plano Anual</h3>
+                                    <div class="preco-plano">
+                                        <span class="valor-anual">R$ 950,40</span>
+                                        <span class="periodo">/ano</span>
+                                        <span class="economia">(Economize 10%)</span>
+                                    </div>
+                                    <ul class="beneficios">
+                                        <li><strong>Licença para 1 CNPJ</strong></li>
+                                        <li>Até 20 funcionários</li>
+                                        <li>Suporte ilimitado</li>
+                                        <li>Dashboard completo</li>
+                                        <li>Integração de folha</li>
+                                    </ul>
+                                    <div class="acoes-plano">
+                                        <button class="cta-button-software">Testar Grátis</button>
+                                        <a href="#" class="link-comprar">Comprar Agora</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="video-apresentacao container">
+            <h3>Veja como o RHiD funciona</h3>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        width="560" 
+                        height="315" 
+                        src="https://www.youtube.com/embed/qVmNOk36cq4" 
+                        title="Apresentação RHiD Software de Ponto" 
+                        frameborder="0" 
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="video-descricao">
+                    <h4>Descubra a Solução Completa para Gestão de Ponto</h4>
+                    <p>Assista este vídeo e entenda como o RHiD pode transformar o controle de ponto da sua empresa, economizando tempo e reduzindo erros.</p>
+                    <ul>
+                        <li>✓ Visão completa do software</li>
+                        <li>✓ Funcionalidades em detalhes</li>
+                        <li>✓ Como simplificar a gestão de ponto</li>
+                    </ul>
+                    <button class="cta-button-video">Quero Conhecer Mais</button>
+                </div>
+            </div>
+        </section>
+
+        <section class="diferenciais container">
+            <h3>Por que escolher o RHiD?</h3>
+            <div class="diferenciais-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide diferencial-card">
+                        <i class="icon-clock"></i>
+                        <h4>Economia de Tempo</h4>
+                        <p>Automatize processos de registro de ponto e libere sua equipe para tarefas estratégicas.</p>
+                    </div>
+                    <div class="swiper-slide diferencial-card">
+                        <i class="icon-shield"></i>
+                        <h4>Segurança de Dados</h4>
+                        <p>Mantenha seus registros seguros e protegidos com nossa infraestrutura de ponta.</p>
+                    </div>
+                    <div class="swiper-slide diferencial-card">
+                        <i class="icon-chart"></i>
+                        <h4>Relatórios Precisos</h4>
+                        <p>Gere relatórios detalhados em poucos cliques, facilitando a gestão.</p>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="recursos-software container">
+            <h3>Recursos e Suporte Completos</h3>
+            <div class="recursos-grid">
+                <div class="recurso-card">
+                    <i class="icon-support"></i>
+                    <h4>Suporte Ilimitado</h4>
+                    <ul>
+                        <li>WhatsApp</li>
+                        <li>E-mail</li>
+                        <li>Telefone</li>
+                        <li>Chat Online</li>
+                    </ul>
+                </div>
+                <div class="recurso-card">
+                    <i class="icon-dashboard"></i>
+                    <h4>Funcionalidades Liberadas</h4>
+                    <ul>
+                        <li>Dashboard Completo</li>
+                        <li>Relatórios Detalhados</li>
+                        <li>Controle de Horas</li>
+                        <li>Integração com Folha</li>
+                    </ul>
+                </div>
+                <div class="recurso-card">
+                    <i class="icon-payment"></i>
+                    <h4>Formas de Pagamento</h4>
+                    <ul>
+                        <li>Boleto Bancário</li>
+                        <li>Cartão de Crédito</li>
+                        <li>PIX</li>
+                        <li>Transferência Bancária</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="depoimentos container">
+            <h3>O que nossos clientes dizem</h3>
+            <div class="depoimentos-swiper swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide depoimento-card">
+                        <div class="avaliacao-estrelas">
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                        </div>
+                        <p>"O RHiD revolucionou nossa gestão de ponto. Muito mais simples e eficiente!"</p>
+                        <div class="cliente-info">
+                            <div>
+                                <strong>João Silva</strong>
+                                <span>CEO - Empresa de Tecnologia</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide depoimento-card">
+                        <div class="avaliacao-estrelas">
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                        </div>
+                        <p>"Economia de tempo e redução de erros. Recomendo para qualquer empresa."</p>
+                        <div class="cliente-info">
+                            <div>
+                                <strong>Maria Souza</strong>
+                                <span>RH - Indústria Metalúrgica</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide depoimento-card">
+                        <div class="avaliacao-estrelas">
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                            <span class="estrela">★</span>
+                        </div>
+                        <p>"Suporte excepcional e interface intuitiva. Fácil de usar para todos."</p>
+                        <div class="cliente-info">
+                            <div>
+                                <strong>Carlos Oliveira</strong>
+                                <span>Diretor - Empresa de Serviços</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </section>
+
+        <section class="duvidas-frequentes container">
+            <h3>Tire Suas Dúvidas</h3>
+            <div class="simulacao-chat">
+                <div class="mensagens-chat">
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Ana Santos</span>
+                        <p>Bom dia! Como funciona a marcação de ponto pelo celular com o software RHiD?</p>
+                        <span class="horario">10:15</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Bom dia, Ana! O aplicativo RHiD permite a marcação de ponto através de celular ou tablet, compatível com Android e iOS. As marcações são seguras, exigem foto para registro e podem ser feitas offline, sendo sincronizadas em tempo real com nosso sistema. <span class="status-check">✓</span></p>
+                        <span class="horario">10:16</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Carlos Oliveira</span>
+                        <p>Boa tarde! Quais são as principais vantagens do ponto por celular?</p>
+                        <span class="horario">14:30</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Boa tarde, Carlos! As principais vantagens incluem: <span class="status-check">✓</span>
+                        <ul>
+                            <li>✓ Segurança nas marcações</li>
+                            <li>✓ Foto obrigatória no registro</li>
+                            <li>✓ Reconhecimento facial</li>
+                            <li>✓ Localização por satélite</li>
+                            <li>✓ Envio de atestados médicos</li>
+                            <li>✓ Assinatura digital do cartão de ponto</li>
+                        </ul>
+                        </p>
+                        <span class="horario">14:31</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Mariana Costa</span>
+                        <p>Boa noite! Todos os funcionários precisam baixar o aplicativo para marcar o ponto?</p>
+                        <span class="horario">20:45</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Boa noite, Mariana! Não necessariamente. Nosso modo quiosque permite que vários funcionários usem o mesmo dispositivo para marcar o ponto, utilizando apenas um PIN ou QR Code previamente cadastrado. <span class="status-check">✓</span></p>
+                        <span class="horario">20:46</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Roberto Mendes</span>
+                        <p>Bom dia! Tenho um relógio de ponto da Henry. Consigo utilizar esse sistema?</p>
+                        <span class="horario">09:20</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Bom dia, Roberto! Sim, com o RHiD, você terá todos os benefícios mencionados, com exceção da comunicação em tempo real. Para isso, será necessário importar o AFD para o sistema. Isso também se aplica a outros equipamentos, com exceção dos relógios da Controlid, que possuem comunicação em tempo real. <span class="status-check">✓</span></p>
+                        <span class="horario">09:21</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Juliana Alves</span>
+                        <p>Boa tarde! O registro de ponto por celular é permitido por lei?</p>
+                        <span class="horario">15:10</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Boa tarde, Juliana! Sim, esta modalidade está enquadrada nos métodos alternativos de controle de ponto, conforme a portaria 671/21 art.79 do Ministério do Trabalho e Emprego (MTE). <span class="status-check">✓</span></p>
+                        <span class="horario">15:11</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Pedro Silva</span>
+                        <p>Bom dia! O que está incluso no plano de licença de uso do software RHiD?</p>
+                        <span class="horario">08:55</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Bom dia, Pedro! O plano inclui: <span class="status-check">✓</span>
+                        <ul>
+                            <li>✓ Licença para até 20 funcionários</li>
+                            <li>✓ Controle de horas completo</li>
+                            <li>✓ Gestão de horários fixos e flexíveis</li>
+                            <li>✓ Relatórios detalhados</li>
+                            <li>✓ Suporte ilimitado</li>
+                            <li>✓ Armazenamento em nuvem</li>
+                        </ul>
+                        </p>
+                        <span class="horario">08:56</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Amanda Rodrigues</span>
+                        <p>Boa noite! Como posso testar o software antes de comprar?</p>
+                        <span class="horario">21:30</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Boa noite, Amanda! Oferecemos teste gratuito por 30 dias. Basta selecionar a opção "Testar Grátis" e inserir suas informações. Nossa equipe técnica agendará um treinamento em até 48 horas para garantir que você aproveite todas as funcionalidades. <span class="status-check">✓</span></p>
+                        <span class="horario">21:31</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Fernando Souza</span>
+                        <p>Bom dia! Existe contrato de fidelidade?</p>
+                        <span class="horario">10:40</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Bom dia, Fernando! Não há contrato de fidelidade. Você pode cancelar o serviço a qualquer momento sem cobranças adicionais. <span class="status-check">✓</span></p>
+                        <span class="horario">10:41</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Camila Oliveira</span>
+                        <p>Boa tarde! Como funciona o suporte técnico?</p>
+                        <span class="horario">16:15</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Boa tarde, Camila! Oferecemos suporte ilimitado via e-mail, telefone e acesso remoto. Auxiliamos em configurações de horas, cálculos, escalas e enquadramento da jornada de trabalho. <span class="status-check">✓</span></p>
+                        <span class="horario">16:16</span>
+                    </div>
+
+                    <div class="mensagem cliente">
+                        <span class="nome-cliente">Lucas Pereira</span>
+                        <p>Bom dia! O software é compatível com quais relógios de ponto?</p>
+                        <span class="horario">11:05</span>
+                    </div>
+                    <div class="mensagem vendedor">
+                        <p><strong>Edson Comercial:</strong> Bom dia, Lucas! Somos compatíveis com os principais relógios do mercado, incluindo ControlID, Henry, Dimep, Topdata, Proveu, RW, entre outros. <span class="status-check">✓</span></p>
+                        <span class="horario">11:06</span>
+                    </div>
+                </div>
+                <div class="input-chat">
+                    <input type="text" placeholder="Digite sua dúvida...">
+                    <button id="enviar-mensagem">Enviar</button>
+                </div>
+            </div>
+        </section>
+
+        <div id="popup-manutencao" class="popup">
+            <div class="popup-content">
+                <h2>Chat em Manutenção</h2>
+                <p>Nosso chat está passando por melhorias técnicas no momento. Mas não se preocupe!</p>
+                <p>Temos um representante comercial aguardando para te atender imediatamente.</p>
+                <a href="https://wa.me/551633397668?text=Ol%C3%A1%21+Estou+interessado+no+RHiD+Software+de+Gest%C3%A3o+de+Ponto.+Quero+saber+mais+detalhes." class="btn-whatsapp-popup" target="_blank">
+                    Falar com Representante no WhatsApp
+                </a>
+                <button class="btn-fechar-popup">Fechar</button>
+            </div>
+        </div>
+
+        <section class="chamada-final container">
+            <div class="chamada-content">
+                <h3>Transforme Sua Gestão de Ponto Agora</h3>
+                <p>Não perca mais tempo com processos manuais. Experimente o RHiD e revolucione o controle de ponto da sua empresa.</p>
+                <div class="chamada-botoes">
+                    <a href="https://typebot.co/lead-magnet-3a9mx2z" class="cta-button-final" target="_blank">Testar Grátis Agora</a>
+                    <a href="https://wa.me/551633397668?text=Ol%C3%A1%21+Estou+interessado+no+RHiD+Software+de+Gest%C3%A3o+de+Ponto.+Quero+saber+mais+detalhes+sobre+como+posso+automatizar+o+controle+de+ponto+da+minha+empresa." class="cta-button-whatsapp" target="_blank">Quero Conhecer Mais</a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
