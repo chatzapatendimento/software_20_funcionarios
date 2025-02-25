@@ -7,7 +7,65 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
-<link rel="stylesheet" href="https://chatzapatendimento.github.io/software_20_funcionarios/styles.css">
+    <link rel="stylesheet" href="https://chatzapatendimento.github.io/software_20_funcionarios/styles.css">
+    <style>
+        /* Estilos existentes */
+        /* ... */
+        
+        /* Estilos adicionais das opiniões */
+        .review {
+            border-bottom: 1px solid #eee;
+            padding: 20px 0;
+        }
+        .review-header {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+        .useful-button {
+            padding: 8px 16px;
+            border: 1px solid #ddd;
+            border-radius: 20px;
+            background: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .ai-summary {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .rating-container {
+            display: flex;
+            align-items: flex-start;
+            gap: 40px;
+        }
+        .rating-summary {
+            flex: 1;
+        }
+        .rating-details {
+            flex: 2;
+        }
+        .big-rating {
+            font-size: 48px;
+            font-weight: bold;
+            color: #1a73e8;
+            margin: 0;
+        }
+        .total-reviews {
+            color: #666;
+            margin-top: 5px;
+        }
+        .star {
+            color: #faaf00;
+        }
+        .characteristic {
+            margin: 15px 0;
+        }
+    </style>
 </head>
 <body>
     <header>
@@ -170,203 +228,219 @@
             </div>
         </section>
 
-        <section class="depoimentos container">
-            <h3>O que nossos clientes dizem</h3>
-            <div class="depoimentos-swiper swiper">
-                <div class="swiper-wrapper">
-                    <div class="swiper-slide depoimento-card">
-                        <div class="avaliacao-estrelas">
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                        </div>
-                        <p>"O RHiD revolucionou nossa gestão de ponto. Muito mais simples e eficiente!"</p>
-                        <div class="cliente-info">
-                            <div>
-                                <strong>João Silva</strong>
-                                <span>CEO - Empresa de Tecnologia</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide depoimento-card">
-                        <div class="avaliacao-estrelas">
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                        </div>
-                        <p>"Economia de tempo e redução de erros. Recomendo para qualquer empresa."</p>
-                        <div class="cliente-info">
-                            <div>
-                                <strong>Maria Souza</strong>
-                                <span>RH - Indústria Metalúrgica</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide depoimento-card">
-                        <div class="avaliacao-estrelas">
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                            <span class="estrela">★</span>
-                        </div>
-                        <p>"Suporte excepcional e interface intuitiva. Fácil de usar para todos."</p>
-                        <div class="cliente-info">
-                            <div>
-                                <strong>Carlos Oliveira</strong>
-                                <span>Diretor - Empresa de Serviços</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="swiper-pagination"></div>
-            </div>
-        </section>
-
         <section class="duvidas-frequentes container">
             <h3>Tire Suas Dúvidas</h3>
             <div class="simulacao-chat">
-                <div class="mensagens-chat">
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Ana Santos</span>
-                        <p>Bom dia! Como funciona a marcação de ponto pelo celular com o software RHiD?</p>
-                        <span class="horario">10:15</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Bom dia, Ana! O aplicativo RHiD permite a marcação de ponto através de celular ou tablet, compatível com Android e iOS. As marcações são seguras, exigem foto para registro e podem ser feitas offline, sendo sincronizadas em tempo real com nosso sistema. <span class="status-check">✓</span></p>
-                        <span class="horario">10:16</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Carlos Oliveira</span>
-                        <p>Boa tarde! Quais são as principais vantagens do ponto por celular?</p>
-                        <span class="horario">14:30</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Boa tarde, Carlos! As principais vantagens incluem: <span class="status-check">✓</span>
-                        <ul>
-                            <li>✓ Segurança nas marcações</li>
-                            <li>✓ Foto obrigatória no registro</li>
-                            <li>✓ Reconhecimento facial</li>
-                            <li>✓ Localização por satélite</li>
-                            <li>✓ Envio de atestados médicos</li>
-                            <li>✓ Assinatura digital do cartão de ponto</li>
-                        </ul>
-                        </p>
-                        <span class="horario">14:31</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Mariana Costa</span>
-                        <p>Boa noite! Todos os funcionários precisam baixar o aplicativo para marcar o ponto?</p>
-                        <span class="horario">20:45</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Boa noite, Mariana! Não necessariamente. Nosso modo quiosque permite que vários funcionários usem o mesmo dispositivo para marcar o ponto, utilizando apenas um PIN ou QR Code previamente cadastrado. <span class="status-check">✓</span></p>
-                        <span class="horario">20:46</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Roberto Mendes</span>
-                        <p>Bom dia! Tenho um relógio de ponto da Henry. Consigo utilizar esse sistema?</p>
-                        <span class="horario">09:20</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Bom dia, Roberto! Sim, com o RHiD, você terá todos os benefícios mencionados, com exceção da comunicação em tempo real. Para isso, será necessário importar o AFD para o sistema. Isso também se aplica a outros equipamentos, com exceção dos relógios da Controlid, que possuem comunicação em tempo real. <span class="status-check">✓</span></p>
-                        <span class="horario">09:21</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Juliana Alves</span>
-                        <p>Boa tarde! O registro de ponto por celular é permitido por lei?</p>
-                        <span class="horario">15:10</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Boa tarde, Juliana! Sim, esta modalidade está enquadrada nos métodos alternativos de controle de ponto, conforme a portaria 671/21 art.79 do Ministério do Trabalho e Emprego (MTE). <span class="status-check">✓</span></p>
-                        <span class="horario">15:11</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Pedro Silva</span>
-                        <p>Bom dia! O que está incluso no plano de licença de uso do software RHiD?</p>
-                        <span class="horario">08:55</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Bom dia, Pedro! O plano inclui: <span class="status-check">✓</span>
-                        <ul>
-                            <li>✓ Licença para até 20 funcionários</li>
-                            <li>✓ Controle de horas completo</li>
-                            <li>✓ Gestão de horários fixos e flexíveis</li>
-                            <li>✓ Relatórios detalhados</li>
-                            <li>✓ Suporte ilimitado</li>
-                            <li>✓ Armazenamento em nuvem</li>
-                        </ul>
-                        </p>
-                        <span class="horario">08:56</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Amanda Rodrigues</span>
-                        <p>Boa noite! Como posso testar o software antes de comprar?</p>
-                        <span class="horario">21:30</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Boa noite, Amanda! Oferecemos teste gratuito por 30 dias. Basta selecionar a opção "Testar Grátis" e inserir suas informações. Nossa equipe técnica agendará um treinamento em até 48 horas para garantir que você aproveite todas as funcionalidades. <span class="status-check">✓</span></p>
-                        <span class="horario">21:31</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Fernando Souza</span>
-                        <p>Bom dia! Existe contrato de fidelidade?</p>
-                        <span class="horario">10:40</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Bom dia, Fernando! Não há contrato de fidelidade. Você pode cancelar o serviço a qualquer momento sem cobranças adicionais. <span class="status-check">✓</span></p>
-                        <span class="horario">10:41</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Camila Oliveira</span>
-                        <p>Boa tarde! Como funciona o suporte técnico?</p>
-                        <span class="horario">16:15</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Boa tarde, Camila! Oferecemos suporte ilimitado via e-mail, telefone e acesso remoto. Auxiliamos em configurações de horas, cálculos, escalas e enquadramento da jornada de trabalho. <span class="status-check">✓</span></p>
-                        <span class="horario">16:16</span>
-                    </div>
-
-                    <div class="mensagem cliente">
-                        <span class="nome-cliente">Lucas Pereira</span>
-                        <p>Bom dia! O software é compatível com quais relógios de ponto?</p>
-                        <span class="horario">11:05</span>
-                    </div>
-                    <div class="mensagem vendedor">
-                        <p><strong>Edson Comercial:</strong> Bom dia, Lucas! Somos compatíveis com os principais relógios do mercado, incluindo ControlID, Henry, Dimep, Topdata, Proveu, RW, entre outros. <span class="status-check">✓</span></p>
-                        <span class="horario">11:06</span>
+                <div class="chat-sidebar">
+                    <div class="chat-info">
+                        <h4>Atendimento Online</h4>
+                        <p>Nossa equipe está pronta para ajudar você com todas as suas dúvidas sobre o RHiD - Software de Ponto</p>
+                        <div class="chat-stats">
+                            <div>
+                                <strong>Tempo médio de resposta</strong>
+                                <span>2 minutos</span>
+                            </div>
+                            <div>
+                                <strong>Satisfação dos clientes</strong>
+                                <span>98%</span>
+                            </div>
+                            <div>
+                                <strong>Atendimentos realizados</strong>
+                                <span>5.000+</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div class="input-chat">
-                    <input type="text" placeholder="Digite sua dúvida...">
-                    <button id="enviar-mensagem">Enviar</button>
+                <div class="chat-main">
+                    <div class="mensagens-chat">
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Ana Santos</span>
+                            <p>Bom dia! Como funciona a marcação de ponto pelo celular com o software RHiD?</p>
+                            <span class="horario">10:15</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Bom dia, Ana! O aplicativo RHiD permite a marcação de ponto através de celular ou tablet, compatível com Android e iOS. As marcações são seguras, exigem foto para registro e podem ser feitas offline, sendo sincronizadas em tempo real com nosso sistema. <span class="status-check">✓</span></p>
+                            <span class="horario">10:16</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Carlos Oliveira</span>
+                            <p>Boa tarde! Quais são as principais vantagens do ponto por celular?</p>
+                            <span class="horario">14:30</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Boa tarde, Carlos! As principais vantagens incluem: <span class="status-check">✓</span>
+                            <ul>
+                                <li>✓ Segurança nas marcações</li>
+                                <li>✓ Foto obrigatória no registro</li>
+                                <li>✓ Reconhecimento facial</li>
+                                <li>✓ Localização por satélite</li>
+                                <li>✓ Envio de atestados médicos</li>
+                                <li>✓ Assinatura digital do cartão de ponto</li>
+                            </ul>
+                            </p>
+                            <span class="horario">14:31</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Mariana Costa</span>
+                            <p>Boa noite! Todos os funcionários precisam baixar o aplicativo para marcar o ponto?</p>
+                            <span class="horario">20:45</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Boa noite, Mariana! Não necessariamente. Nosso modo quiosque permite que vários funcionários usem o mesmo dispositivo para marcar o ponto, utilizando apenas um PIN ou QR Code previamente cadastrado. <span class="status-check">✓</span></p>
+                            <span class="horario">20:46</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Roberto Mendes</span>
+                            <p>Bom dia! Tenho um relógio de ponto da Henry. Consigo utilizar esse sistema?</p>
+                            <span class="horario">09:20</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Bom dia, Roberto! Sim, com o RHiD, você terá todos os benefícios mencionados, com exceção da comunicação em tempo real. Para isso, será necessário importar o AFD para o sistema. Isso também se aplica a outros equipamentos, com exceção dos relógios da Controlid, que possuem comunicação em tempo real. <span class="status-check">✓</span></p>
+                            <span class="horario">09:21</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Juliana Alves</span>
+                            <p>Boa tarde! O registro de ponto por celular é permitido por lei?</p>
+                            <span class="horario">15:10</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Boa tarde, Juliana! Sim, esta modalidade está enquadrada nos métodos alternativos de controle de ponto, conforme a portaria 671/21 art.79 do Ministério do Trabalho e Emprego (MTE). <span class="status-check">✓</span></p>
+                            <span class="horario">15:11</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Pedro Silva</span>
+                            <p>Bom dia! O que está incluso no plano de licença de uso do software RHiD?</p>
+                            <span class="horario">08:55</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Bom dia, Pedro! O plano inclui: <span class="status-check">✓</span>
+                            <ul>
+                                <li>✓ Licença para até 20 funcionários</li>
+                                <li>✓ Controle de horas completo</li>
+                                <li>✓ Gestão de horários fixos e flexíveis</li>
+                                <li>✓ Relatórios detalhados</li>
+                                <li>✓ Suporte ilimitado</li>
+                                <li>✓ Armazenamento em nuvem</li>
+                            </ul>
+                            </p>
+                            <span class="horario">08:56</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Amanda Rodrigues</span>
+                            <p>Boa noite! Como posso testar o software antes de comprar?</p>
+                            <span class="horario">21:30</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Boa noite, Amanda! Oferecemos teste gratuito por 30 dias. Basta selecionar a opção "Testar Grátis" e inserir suas informações. Nossa equipe técnica agendará um treinamento em até 48 horas para garantir que você aproveite todas as funcionalidades. <span class="status-check">✓</span></p>
+                            <span class="horario">21:31</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Fernando Souza</span>
+                            <p>Bom dia! Existe contrato de fidelidade?</p>
+                            <span class="horario">10:40</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Bom dia, Fernando! Não há contrato de fidelidade. Você pode cancelar o serviço a qualquer momento sem cobranças adicionais. <span class="status-check">✓</span></p>
+                            <span class="horario">10:41</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Camila Oliveira</span>
+                            <p>Boa tarde! Como funciona o suporte técnico?</p>
+                            <span class="horario">16:15</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Boa tarde, Camila! Oferecemos suporte ilimitado via e-mail, telefone e acesso remoto. Auxiliamos em configurações de horas, cálculos, escalas e enquadramento da jornada de trabalho. <span class="status-check">✓</span></p>
+                            <span class="horario">16:16</span>
+                        </div>
+
+                        <div class="mensagem cliente">
+                            <span class="nome-cliente">Lucas Pereira</span>
+                            <p>Bom dia! O software é compatível com quais relógios de ponto?</p>
+                            <span class="horario">11:05</span>
+                        </div>
+                        <div class="mensagem vendedor">
+                            <p><strong>Edson Comercial:</strong> Bom dia, Lucas! Somos compatíveis com os principais relógios do mercado, incluindo ControlID, Henry, Dimep, Topdata, Proveu, RW, entre outros. <span class="status-check">✓</span></p>
+                            <span class="horario">11:06</span>
+                        </div>
+                    </div>
+                    <div class="input-chat">
+                        <input type="text" placeholder="Digite sua dúvida...">
+                        <button id="enviar-mensagem">Enviar</button>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <div id="popup-manutencao" class="popup">
-            <div class="popup-content">
-                <h2>Chat em Manutenção</h2>
-                <p>Nosso chat está passando por melhorias técnicas no momento. Mas não se preocupe!</p>
-                <p>Temos um representante comercial aguardando para te atender imediatamente.</p>
-                <a href="https://wa.me/551633397668?text=Ol%C3%A1%21+Estou+interessado+no+RHiD+Software+de+Gest%C3%A3o+de+Ponto.+Quero+saber+mais+detalhes." class="btn-whatsapp-popup" target="_blank">
-                    Falar com Representante no WhatsApp
-                </a>
-                <button class="btn-fechar-popup">Fechar</button>
+        <section id="opinions" class="container">
+            <h2>💫 O que nossos clientes estão dizendo</h2>
+            <div class="rating-container">
+                <div class="rating-summary">
+                    <p class="big-rating">4.7</p>
+                    <p class="total-reviews">92 avaliações</p>
+                    
+                    <div class="stars-distribution">
+                        <div>5 ★ (65)</div>
+                        <div>4 ★ (20)</div>
+                        <div>3 ★ (5)</div>
+                        <div>2 ★ (1)</div>
+                        <div>1 ★ (1)</div>
+                    </div>
+
+                    <h3>Avaliação de características</h3>
+                    <div class="characteristic">
+                        <div>Custo-benefício</div>
+                        <div>★★★★½</div>
+                    </div>
+                    <div class="characteristic">
+                        <div>Facilidade de uso</div>
+                        <div>★★★★★</div>
+                    </div>
+                    <div class="characteristic">
+                        <div>Qualidade do suporte</div>
+                        <div>★★★★½</div>
+                    </div>
+                </div>
+
+                <div class="rating-details">
+                    <div class="filter-buttons">
+                        <button class="filter-button active" data-sort="recent">Mais recentes</button>
+                        <button class="filter-button" data-sort="highest">Maior avaliação</button>
+                        <button class="filter-button" data-sort="lowest">Menor avaliação</button>
+                        <button class="filter-button" data-sort="useful">Mais úteis</button>
+                    </div>
+
+                    <div class="star-filter">
+                        <span>Filtrar por estrelas:</span>
+                        <button class="star-button" data-stars="5">5★</button>
+                        <button class="star-button" data-stars="4">4★</button>
+                        <button class="star-button" data-stars="3">3★</button>
+                        <button class="star-button" data-stars="2">2★</button>
+                        <button class="star-button" data-stars="1">1★</button>
+                        <button class="star-button active" data-stars="0">Todas</button>
+                    </div>
+
+                    <h2>Opiniões em destaque</h2>
+                    <p class="total-comments">33 comentários</p>
+
+                    <div class="ai-summary">
+                        <p>pessoas</p>
+                        <p>O software é elogiado por sua qualidade e funcionamento perfeito, especialmente no controle de ponto e suporte técnico. Todos os componentes, incluindo interface, relatórios e integrações, funcionam adequadamente após a instalação. Além disso, a durabilidade é destacada, com usuários relatando bom desempenho após meses de uso.</p>
+                    </div>
+
+                    <div class="review-container">
+                        <!-- Opiniões serão inseridas aqui via JavaScript -->
+                    </div>
+                </div>
             </div>
-        </div>
+        </section>
 
         <section class="chamada-final container">
             <div class="chamada-content">
@@ -387,7 +461,7 @@
     </footer>
 
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
-<script src="https://chatzapatendimento.github.io/software_20_funcionarios/script.js"></script>
+    <script src="opinions.js"></script>
+    <script src="https://chatzapatendimento.github.io/software_20_funcionarios/script.js"></script>
 </body>
 </html>
