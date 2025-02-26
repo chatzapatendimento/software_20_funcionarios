@@ -1,5 +1,5 @@
 // Dados das opiniões
-const opinions = [
+const opinionsData = [
     {
         rating: 5,
         date: '25 fev. 2025',
@@ -91,7 +91,7 @@ const opinions = [
     {
         rating: 4,
         date: '29 jan. 2025',
-        comment: 'Sistema muito confiável e seguro. O suporte técnico é excelente e sempre muito prestativo.',
+        comment: 'Sistema muito confiável e seguro. O suporte técnico é excelente e sempre nos ajuda quando precisamos.',
         useful: 7,
         author: 'Paulo Soares',
         company: 'Atacado Mundial'
@@ -165,7 +165,7 @@ const opinions = [
 // Estado global para filtros e paginação
 let currentSort = 'recent';
 let currentStarFilter = 0;
-let showAllOpinions = false;
+let showingAll = false;
 const OPINIONS_PER_PAGE = 6;
 
 // Função para gerar estrelas HTML
@@ -175,259 +175,211 @@ function generateStars(rating) {
 
 // Função para calcular média das avaliações
 function calculateAverageRating() {
-    const sum = opinions.reduce((acc, opinion) => acc + opinion.rating, 0);
-    return (sum / opinions.length).toFixed(1);
+    const total = opinionsData.reduce((acc, curr) => acc + curr.rating, 0);
+    return (total / opinionsData.length).toFixed(1);
 }
 
 // Função para contar distribuição de estrelas
 function getStarDistribution() {
+    // Inicializa com 0 para todas as estrelas
     const distribution = {5: 0, 4: 0, 3: 0, 2: 0, 1: 0};
-    opinions.forEach(opinion => {
+    
+    // Conta as avaliações
+    opinionsData.forEach(opinion => {
         distribution[opinion.rating]++;
     });
+    
     return distribution;
 }
 
 // Função para filtrar opiniões
 function filterOpinions() {
-    let filteredOpinions = [...opinions];
-    
-    // Aplicar filtro de estrelas
+    let filtered = [...opinionsData];
+
     if (currentStarFilter > 0) {
-        filteredOpinions = filteredOpinions.filter(opinion => opinion.rating === currentStarFilter);
+        filtered = filtered.filter(opinion => opinion.rating === currentStarFilter);
     }
 
-    // Aplicar ordenação
-    switch(currentSort) {
+    switch (currentSort) {
         case 'recent':
-            filteredOpinions.sort((a, b) => new Date(b.date) - new Date(a.date));
+            filtered.sort((a, b) => new Date(b.date.split('.').reverse().join('-')) - new Date(a.date.split('.').reverse().join('-')));
             break;
         case 'highest':
-            filteredOpinions.sort((a, b) => b.rating - a.rating);
+            filtered.sort((a, b) => b.rating - a.rating || b.useful - a.useful);
             break;
         case 'lowest':
-            filteredOpinions.sort((a, b) => a.rating - b.rating);
+            filtered.sort((a, b) => a.rating - b.rating || b.useful - a.useful);
             break;
         case 'useful':
-            filteredOpinions.sort((a, b) => b.useful - a.useful);
+            filtered.sort((a, b) => b.useful - a.useful);
             break;
     }
 
-    return filteredOpinions;
+    return filtered;
 }
 
 // Função para renderizar opiniões
 function renderOpinions() {
-    const filteredOpinions = filterOpinions();
-    const opinionsContainer = document.querySelector('.opinions-container');
-    
-    let opinionsToShow = showAllOpinions ? filteredOpinions : filteredOpinions.slice(0, OPINIONS_PER_PAGE);
-    
-    opinionsContainer.innerHTML = opinionsToShow.map(opinion => `
-        <div class="opinion">
-            <div class="opinion-header">
+    const container = document.querySelector('.review-container');
+    const filtered = filterOpinions();
+    const displayOpinions = showingAll ? filtered : filtered.slice(0, OPINIONS_PER_PAGE);
+
+    // Atualiza o total de comentários
+    document.querySelector('.total-comments').textContent = `${filtered.length} comentários`;
+
+    container.innerHTML = displayOpinions.map(opinion => `
+        <div class="review">
+            <div class="review-header">
                 <div class="stars">${generateStars(opinion.rating)}</div>
-                <div class="date">${opinion.date}</div>
+                <div class="review-date">${opinion.date}</div>
             </div>
-            <p class="comment">${opinion.comment}</p>
-            <div class="opinion-footer">
-                <div class="author">
+            <p class="review-text">${opinion.comment}</p>
+            <div class="review-footer">
+                <div class="review-author">
                     <strong>${opinion.author}</strong>
                     <span>${opinion.company}</span>
                 </div>
-                <button class="useful-button" onclick="incrementUseful(this)" data-count="${opinion.useful}">
-                    É útil <span>${opinion.useful}</span>
+                <button class="useful-button" onclick="incrementUseful(this)" data-useful="${opinion.useful}">
+                    👍 Útil (${opinion.useful})
                 </button>
             </div>
         </div>
     `).join('');
 
-    // Atualizar contadores
-    document.querySelector('.total-opinions').textContent = `${filteredOpinions.length} avaliações`;
-    document.querySelector('.average-rating').textContent = calculateAverageRating();
+    if (!showingAll && filtered.length > OPINIONS_PER_PAGE) {
+        container.innerHTML += `
+            <button class="show-more-button" onclick="toggleShowAll()">
+                Ver mais opiniões (${filtered.length - OPINIONS_PER_PAGE} restantes)
+            </button>
+        `;
+    }
+
+    // Atualiza a média e distribuição de estrelas
+    document.querySelector('.big-rating').textContent = calculateAverageRating();
+    document.querySelector('.total-reviews').textContent = `${opinionsData.length} avaliações`;
     
-    // Atualizar distribuição de estrelas
+    // Atualiza a distribuição de estrelas
     const distribution = getStarDistribution();
-    Object.entries(distribution).reverse().forEach(([rating, count]) => {
-        const element = document.querySelector(`.star-${rating}`);
-        if (element) {
-            element.textContent = `${rating}★ (${count})`;
-        }
-    });
+    const starsDistributionHtml = Object.entries(distribution)
+        .sort(([a], [b]) => b - a) // Ordena de 5 para 1 estrela
+        .map(([stars, count]) => `<div>${stars} ★ (${count})</div>`)
+        .join('');
+    document.querySelector('.stars-distribution').innerHTML = starsDistributionHtml;
 }
 
 // Função para alternar entre mostrar todas as opiniões ou apenas as primeiras
 function toggleShowAll() {
-    showAllOpinions = !showAllOpinions;
+    showingAll = !showingAll;
     renderOpinions();
 }
 
 // Função para incrementar contagem de "útil"
 function incrementUseful(button) {
-    const count = parseInt(button.dataset.count) + 1;
-    button.dataset.count = count;
-    button.querySelector('span').textContent = count;
+    const currentCount = parseInt(button.dataset.useful);
+    button.dataset.useful = currentCount + 1;
+    button.textContent = `👍 Útil (${currentCount + 1})`;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', function() {
     // Navegação entre seções
     const navButtons = document.querySelectorAll('.nav-btn');
     const sections = document.querySelectorAll('.section');
 
     navButtons.forEach(button => {
         button.addEventListener('click', () => {
-            // Remove active class from all buttons and sections
             navButtons.forEach(btn => btn.classList.remove('active'));
             sections.forEach(sec => sec.classList.remove('active'));
-
-            // Add active class to clicked button and corresponding section
             button.classList.add('active');
             document.getElementById(button.dataset.section).classList.add('active');
         });
-    });
-
-    // Inicializar Swiper
-    const produtoSwiper = new Swiper('.produto-swiper', {
-        slidesPerView: 1,
-        spaceBetween: 30,
-        navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
-        },
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
-    const planosSwiper = new Swiper('.planos-swiper', {
-        slidesPerView: 2,
-        spaceBetween: 30,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true,
-        },
-    });
-
-    const diferenciaisSwiper = new Swiper('.diferenciais-swiper', {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        breakpoints: {
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-        }
-    });
-
-    const depoimentosSwiper = new Swiper('.depoimentos-swiper', {
-        slidesPerView: 3,
-        spaceBetween: 20,
-        pagination: {
-            el: '.swiper-pagination',
-            clickable: true
-        },
-        breakpoints: {
-            320: { slidesPerView: 1 },
-            640: { slidesPerView: 2 },
-            1024: { slidesPerView: 3 }
-        }
     });
 
     // Toggle de plano mensal/anual
     const planoToggle = document.getElementById('plano-toggle');
     const planoMensal = document.querySelector('.plano-mensal');
     const planoAnual = document.querySelector('.plano-anual');
+    const valorMensal = document.querySelector('.valor-mensal');
+    const valorAnual = document.querySelector('.valor-anual');
+    const periodoAnual = document.querySelector('.plano-anual .periodo');
+    const economiaAnual = document.querySelector('.plano-anual .economia');
 
     planoToggle.addEventListener('change', () => {
         if (planoToggle.checked) {
             planoMensal.style.display = 'none';
             planoAnual.style.display = 'block';
+            valorAnual.textContent = 'R$ 950,40';
+            periodoAnual.textContent = '/ano';
+            economiaAnual.textContent = '(Economize 10% - apenas R$ 79,20/mês)';
         } else {
             planoMensal.style.display = 'block';
             planoAnual.style.display = 'none';
-        }
-    });
-
-    // Botões de CTA
-    const ctaButtons = document.querySelectorAll('.cta-button, .cta-button-software');
-    
-    ctaButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const nome = prompt('Digite seu nome completo:');
-            const email = prompt('Digite seu email corporativo:');
-            const telefone = prompt('Digite seu telefone (com DDD):');
-            
-            if (nome && email && telefone) {
-                const mensagem = button.classList.contains('cta-button') 
-                    ? `Obrigado, ${nome}! Entraremos em contato sobre o Coletor de Ponto IDFace no email ${email}.`
-                    : `Obrigado, ${nome}! Você receberá um email em ${email} com as instruções para testar gratuitamente o RHiD.`;
-                
-                alert(mensagem);
-            } else {
-                alert('Por favor, preencha todos os campos para prosseguir.');
-            }
-        });
-    });
-
-    // Botão de CTA do Vídeo
-    const ctaVideoButton = document.querySelector('.cta-button-video');
-    
-    ctaVideoButton.addEventListener('click', () => {
-        const nome = prompt('Quer saber mais? Digite seu nome completo:');
-        const email = prompt('Digite seu email corporativo:');
-        const telefone = prompt('Digite seu telefone (com DDD):');
-        
-        if (nome && email && telefone) {
-            const mensagem = `Obrigado, ${nome}! Vamos enviar mais detalhes sobre o RHiD no email ${email}. Nossa equipe entrará em contato em breve.`;
-            alert(mensagem);
-        } else {
-            alert('Por favor, preencha todos os campos para prosseguir.');
-        }
-    });
-
-    // Lógica do popup de manutenção
-    const botaoEnviarMensagem = document.getElementById('enviar-mensagem');
-    const popupManutencao = document.getElementById('popup-manutencao');
-    const botaoFecharPopup = document.querySelector('.btn-fechar-popup');
-
-    botaoEnviarMensagem.addEventListener('click', () => {
-        popupManutencao.style.display = 'flex';
-    });
-
-    botaoFecharPopup.addEventListener('click', () => {
-        popupManutencao.style.display = 'none';
-    });
-
-    // Fechar popup ao clicar fora
-    popupManutencao.addEventListener('click', (event) => {
-        if (event.target === popupManutencao) {
-            popupManutencao.style.display = 'none';
+            valorMensal.textContent = 'R$ 88,00';
         }
     });
 
     // Inicialização das opiniões
-    document.querySelectorAll('.filter-button').forEach(button => {
+    const filterButtons = document.querySelectorAll('.filter-button');
+    const starButtons = document.querySelectorAll('.star-button');
+
+    filterButtons.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelectorAll('.filter-button').forEach(btn => btn.classList.remove('active'));
+            filterButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             currentSort = button.dataset.sort;
+            showingAll = false;
             renderOpinions();
         });
     });
 
-    document.querySelectorAll('.star-button').forEach(button => {
+    starButtons.forEach(button => {
         button.addEventListener('click', () => {
-            document.querySelectorAll('.star-button').forEach(btn => btn.classList.remove('active'));
+            starButtons.forEach(btn => btn.classList.remove('active'));
             button.classList.add('active');
             currentStarFilter = parseInt(button.dataset.stars);
+            showingAll = false;
             renderOpinions();
         });
     });
 
-    // Renderizar opiniões iniciais
+    // Inicialização do Swiper para os recursos
+    const recursosSwiper = new Swiper('.recursos-slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.recursos-nav-next',
+            prevEl: '.recursos-nav-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
+        }
+    });
+
+    // Inicialização do Swiper para os diferenciais
+    const diferenciaisSwiper = new Swiper('.diferenciais-slider', {
+        slidesPerView: 1,
+        spaceBetween: 20,
+        navigation: {
+            nextEl: '.diferenciais-nav-next',
+            prevEl: '.diferenciais-nav-prev',
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        breakpoints: {
+            768: {
+                slidesPerView: 3,
+                spaceBetween: 30
+            }
+        }
+    });
+
     renderOpinions();
 });
