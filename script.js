@@ -3,58 +3,58 @@ const opinionsData = [
     {
         rating: 5,
         date: '25 fev. 2025',
-        comment: 'Excelente software! A implementação foi muito rápida e o suporte técnico foi excepcional durante todo o processo. Nossa equipe se adaptou rapidamente ao sistema.',
+        comment: 'A nossa experiência com a Araponto está sendo ótima, equipe muito prestativa, ótimo atendimento, sempre que tenho uma dúvida tenho retorno imediato. Produtos de qualidade e preço justo, o melhor da cidade, muito obrigada!',
         useful: 12,
-        author: 'Maria Silva',
-        company: 'Tech Solutions Ltda'
+        author: 'RH',
+        company: 'SR Atacadista'
     },
     {
         rating: 5,
         date: '23 fev. 2025',
-        comment: 'O que mais me impressionou foi a rapidez do suporte. Sempre que precisamos de ajuda, eles respondem em minutos. O sistema é muito intuitivo e fácil de usar.',
+        comment: 'Experiência muito boa sempre muito bem atendida, solucionando sempre o que é pedido.',
         useful: 8,
-        author: 'João Santos',
-        company: 'Construções Santos'
+        author: 'Valeria',
+        company: 'Golden Transposrtes'
     },
     {
         rating: 4,
         date: '20 fev. 2025',
-        comment: 'Ótimo custo-benefício! O sistema atende todas as nossas necessidades e o suporte é sempre muito atencioso. Recomendo fortemente.',
+        comment: 'Quero agradecer pelo apoio do pessoal da empresa Araponto Relógios. Sempre que precisei dos serviços referente ao ponto eletrônico, a empresa sempre esteve a disposição para resolver o problema, atendimento nota 10. Agradeço o Edson pela paciência. A empresa Araponto Relógios eu indico.',
         useful: 5,
-        author: 'Ana Oliveira',
-        company: 'Mercado Central'
+        author: 'André Cardoso',
+        company: 'Agicargo'
     },
     {
         rating: 5,
         date: '18 fev. 2025',
-        comment: 'Implementamos o RHiD há 6 meses e foi a melhor decisão que tomamos. O controle de ponto ficou muito mais eficiente e preciso.',
+        comment: 'Muito atenciosos, pacientes e oferecem um ótimo serviço, além de prestarem um ótimo suporte também. Super recomendo!',
         useful: 15,
-        author: 'Carlos Eduardo',
-        company: 'Logística Express'
+        author: 'Brenda',
+        company: 'RH Moura'
     },
     {
         rating: 5,
         date: '15 fev. 2025',
-        comment: 'A integração com nosso sistema de folha de pagamento foi perfeita! O suporte nos auxiliou em todo o processo. Muito satisfeito!',
+        comment: 'Atendimento excelente!! Sempre prontos a nos atender, de maneira ágil e proativa.',
         useful: 7,
-        author: 'Patricia Mendes',
-        company: 'Indústrias Mendes'
+        author: 'Renata Santos',
+        company: 'Novas Midias Digitais'
     },
     {
         rating: 4,
         date: '12 fev. 2025',
-        comment: 'Sistema muito completo e estável. Raramente temos problemas, e quando acontece algo, o suporte resolve rapidamente.',
+        comment: 'Nossa experiência com a Araponto está sendo muito boa, equipe muito prestativa, ótimo atendimento, serviço de boa qualidade, sempre que preciso tenho retorno muito rápido, equipamentos são de ótima qualidade e os preços são bem justos. Estamos muito satisfeitos!',
         useful: 4,
-        author: 'Roberto Almeida',
-        company: 'Supermercados Almeida'
+        author: 'Flavia Alves',
+        company: 'Holtel Golden Tower'
     },
     {
         rating: 5,
         date: '10 fev. 2025',
-        comment: 'O aplicativo mobile é sensacional! Nossos funcionários externos conseguem bater ponto sem nenhuma dificuldade.',
+        comment: 'Empresa responsável, produto de qualidade e ótimos profissionais que estão sempre acompanhado e nos orientando. Recomendo!!!!',
         useful: 9,
-        author: 'Fernanda Costa',
-        company: 'Vendas Externas SA'
+        author: 'Rafaela Barcelloss Leit',
+        company: 'Kambe Embalagens'
     },
     {
         rating: 5,
@@ -75,58 +75,58 @@ const opinionsData = [
     {
         rating: 5,
         date: '03 fev. 2025',
-        comment: 'Melhor sistema de ponto que já utilizamos! Interface moderna e intuitiva. O suporte é sempre muito ágil.',
+        comment: 'Ótima empresa, ótimo atendimento e principalmente um ótimo suporte para duvidas e esclarecimentos.',
         useful: 13,
-        author: 'Ricardo Santos',
-        company: 'Transportadora Santos'
+        author: 'Aron Oliveira',
+        company: 'Tambores e Sucatas'
     },
     {
         rating: 5,
         date: '01 fev. 2025',
-        comment: 'A customização do sistema para nossa realidade foi perfeita. O time de suporte entendeu exatamente o que precisávamos.',
+        comment: 'Sempre atenciosos, de prontidão para poder auxiliar nas dúvidas e demais situações.',
         useful: 8,
-        author: 'Mariana Lima',
-        company: 'Fábrica Lima'
+        author: 'Isabela Bazona',
+        company: 'Transribeiro'
     },
     {
         rating: 4,
         date: '29 jan. 2025',
-        comment: 'Sistema muito confiável e seguro. O suporte técnico é excelente e sempre nos ajuda quando precisamos.',
+        comment: 'Empresa com atendimento sensacional...',
         useful: 7,
-        author: 'Paulo Soares',
-        company: 'Atacado Mundial'
+        author: 'Comercial Eletro Félix',
+        company: 'Eletro Félixl'
     },
     {
         rating: 5,
         date: '27 jan. 2025',
-        comment: 'Impressionante a facilidade de uso! Nossa equipe se adaptou muito rápido ao sistema. O suporte é nota 10!',
+        comment: 'Ótima empresa, ofereceu todo o suporte pra nós do Ja1000!!! Recomendo',
         useful: 10,
-        author: 'Camila Ferreira',
-        company: 'Lojas Ferreira'
+        author: 'Nando Souzza',
+        company: 'Já1000'
     },
     {
         rating: 5,
         date: '25 jan. 2025',
-        comment: 'O dashboard é muito completo e nos ajuda muito na gestão. O suporte sempre nos auxilia com as dúvidas.',
+        comment: 'Ótima empresa, nos proporciona um ótimo atendimento e o sistema de ponto RHiD é execelente!!! Super recomendo!!!',
         useful: 9,
-        author: 'Diego Oliveira',
-        company: 'Oliveira Comércio'
+        author: 'Mariana Rodrigues',
+        company: 'Pães Rodrigues Rodrigues'
     },
     {
         rating: 4,
         date: '23 jan. 2025',
-        comment: 'Muito satisfeito com o sistema. A equipe de suporte é muito competente e sempre nos atende bem.',
+        comment: 'Empresa muito responsável, produto de qualidade e profissional que está sempre disposto a acompanhar e orientar.... Recomendo!!!!',
         useful: 5,
-        author: 'Julia Castro',
-        company: 'Restaurante Sabor'
+        author: 'Pedro Texeira',
+        company: 'Rodonaves'
     },
     {
         rating: 5,
         date: '20 jan. 2025',
-        comment: 'Excelente relação custo-benefício! O sistema é muito completo e o suporte é sempre muito atencioso.',
+        comment: 'Atendimento impecável, cheguei cotar valores em outros lugares, mas fui tão bem atendida, e isso foi o que me fez optar pela Araponto',
         useful: 12,
-        author: 'Fernando Silva',
-        company: 'Distribuidora Silva'
+        author: 'Beatriz Cotrin',
+        company: 'AG2 Engeharia'
     },
     {
         rating: 5,
@@ -141,16 +141,16 @@ const opinionsData = [
         date: '15 jan. 2025',
         comment: 'O sistema é muito estável e raramente apresenta problemas. Quando precisamos, o suporte é sempre muito eficiente.',
         useful: 6,
-        author: 'Gustavo Pereira',
-        company: 'Auto Peças GP'
+        author: 'Regina',
+        company: 'Iza\'s Variedades'
     },
     {
         rating: 5,
         date: '13 jan. 2025',
-        comment: 'Melhor decisão que tomamos foi migrar para o RHiD. O suporte é excepcional e o sistema é muito completo.',
+        comment: 'Uma das melhores empresas que atua com Relógios de Ponto. Atendimento rápido e com qualidade. Valorizam seu cliente e estão sempre dispostos a sanar quaisquer dúvidas. A entrega é rápida e o preço é justo... recomendo!',
         useful: 11,
-        author: 'Renata Souza',
-        company: 'Escola Futuro'
+        author: 'Carina Pires',
+        company: 'Pão da Terra'
     },
     {
         rating: 5,
@@ -192,40 +192,22 @@ function getStarDistribution() {
     return distribution;
 }
 
-// Função para filtrar opiniões
-function filterOpinions() {
-    let filtered = [...opinionsData];
-
-    if (currentStarFilter > 0) {
-        filtered = filtered.filter(opinion => opinion.rating === currentStarFilter);
-    }
-
-    switch (currentSort) {
-        case 'recent':
-            filtered.sort((a, b) => new Date(b.date.split('.').reverse().join('-')) - new Date(a.date.split('.').reverse().join('-')));
-            break;
-        case 'highest':
-            filtered.sort((a, b) => b.rating - a.rating || b.useful - a.useful);
-            break;
-        case 'lowest':
-            filtered.sort((a, b) => a.rating - b.rating || b.useful - a.useful);
-            break;
-        case 'useful':
-            filtered.sort((a, b) => b.useful - a.useful);
-            break;
-    }
-
-    return filtered;
-}
-
 // Função para renderizar opiniões
 function renderOpinions() {
     const container = document.querySelector('.review-container');
+    if (!container) {
+        console.error('Container de reviews não encontrado');
+        return;
+    }
+
     const filtered = filterOpinions();
     const displayOpinions = showingAll ? filtered : filtered.slice(0, OPINIONS_PER_PAGE);
 
     // Atualiza o total de comentários
-    document.querySelector('.total-comments').textContent = `${filtered.length} comentários`;
+    const totalCommentsElement = document.querySelector('.total-comments');
+    if (totalCommentsElement) {
+        totalCommentsElement.textContent = `${filtered.length} comentários`;
+    }
 
     container.innerHTML = displayOpinions.map(opinion => `
         <div class="review">
@@ -240,7 +222,7 @@ function renderOpinions() {
                     <span>${opinion.company}</span>
                 </div>
                 <button class="useful-button" onclick="incrementUseful(this)" data-useful="${opinion.useful}">
-                    👍 Útil (${opinion.useful})
+                    Útil (${opinion.useful})
                 </button>
             </div>
         </div>
@@ -255,16 +237,54 @@ function renderOpinions() {
     }
 
     // Atualiza a média e distribuição de estrelas
-    document.querySelector('.big-rating').textContent = calculateAverageRating();
-    document.querySelector('.total-reviews').textContent = `${opinionsData.length} avaliações`;
+    const bigRatingElement = document.querySelector('.big-rating');
+    const totalReviewsElement = document.querySelector('.total-reviews');
+    const starsDistributionElement = document.querySelector('.stars-distribution');
+
+    if (bigRatingElement) {
+        bigRatingElement.textContent = calculateAverageRating();
+    }
+    if (totalReviewsElement) {
+        totalReviewsElement.textContent = `${opinionsData.length} avaliações`;
+    }
     
     // Atualiza a distribuição de estrelas
-    const distribution = getStarDistribution();
-    const starsDistributionHtml = Object.entries(distribution)
-        .sort(([a], [b]) => b - a) // Ordena de 5 para 1 estrela
-        .map(([stars, count]) => `<div>${stars} ★ (${count})</div>`)
-        .join('');
-    document.querySelector('.stars-distribution').innerHTML = starsDistributionHtml;
+    if (starsDistributionElement) {
+        const distribution = getStarDistribution();
+        const starsDistributionHtml = Object.entries(distribution)
+            .sort(([a], [b]) => b - a) // Ordena de 5 para 1 estrela
+            .map(([stars, count]) => `<div>${stars} ★ (${count})</div>`)
+            .join('');
+        starsDistributionElement.innerHTML = starsDistributionHtml;
+    }
+}
+
+// Função para filtrar opiniões
+function filterOpinions() {
+    let filtered = [...opinionsData];
+
+    // Filtro por estrelas
+    if (currentStarFilter > 0) {
+        filtered = filtered.filter(opinion => opinion.rating === currentStarFilter);
+    }
+
+    // Ordenação
+    switch (currentSort) {
+        case 'recent':
+            // Já está ordenado por data (mais recente primeiro)
+            break;
+        case 'highest':
+            filtered.sort((a, b) => b.rating - a.rating);
+            break;
+        case 'lowest':
+            filtered.sort((a, b) => a.rating - b.rating);
+            break;
+        case 'useful':
+            filtered.sort((a, b) => b.useful - a.useful);
+            break;
+    }
+
+    return filtered;
 }
 
 // Função para alternar entre mostrar todas as opiniões ou apenas as primeiras
@@ -277,7 +297,7 @@ function toggleShowAll() {
 function incrementUseful(button) {
     const currentCount = parseInt(button.dataset.useful);
     button.dataset.useful = currentCount + 1;
-    button.textContent = `👍 Útil (${currentCount + 1})`;
+    button.textContent = `Útil (${currentCount + 1})`;
 }
 
 document.addEventListener('DOMContentLoaded', function() {
